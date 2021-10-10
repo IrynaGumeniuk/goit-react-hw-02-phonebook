@@ -3,7 +3,6 @@ import styles from "./Phonebook.module.css";
 
 class Phonebook extends Component {
   render() {
-    console.log(this.props);
     return (
       <form onSubmit={this.props.onSubmit}>
         <h2>Phonebook</h2>
@@ -28,7 +27,7 @@ class Phonebook extends Component {
           required
         ></input>
 
-        <button type="submit">Add contact</button>
+        <button className={styles.btn} type="submit">Add contact</button>
       </form>
     );
   }

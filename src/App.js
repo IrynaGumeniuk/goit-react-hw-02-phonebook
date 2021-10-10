@@ -18,8 +18,6 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit");
-    console.log(this.state);
     const contact = {
       id: uuidv4(),
       name: this.state.name,
@@ -30,16 +28,15 @@ class App extends Component {
     )
       ? alert(`${contact.name} already exists`)
       : this.setState((prev) => {
-          return {
-            contacts: [...prev.contacts, contact],
-          };
-        });
+        return {
+          contacts: [...prev.contacts, contact],
+        };
+      });
     this.setState({ name: "", number: "" });
   };
 
   handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(value);
     this.setState({ [name]: value });
   };
 
@@ -59,8 +56,7 @@ class App extends Component {
 
   render() {
     const filterContact = this.filterByName();
-    console.log(filterContact);
-    const { contacts, name, number, filter } = this.state;
+    const { filter } = this.state;
     return (
       <>
         <Phonebook

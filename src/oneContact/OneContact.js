@@ -3,12 +3,12 @@ import styles from "./OneContact.module.css";
 
 const OneContact = ({ contact: { id, name, number }, deleteContact }) => {
   return (
-    <li>
+    <li className={styles.item}>
       <span>{name}: </span>
       <span>{number}</span>
       <button
         type="button"
-        className={styles.btnDelete}
+        className={styles.btn}
         onClick={() => deleteContact(id)}
       >
         Delete
